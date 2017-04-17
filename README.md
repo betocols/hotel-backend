@@ -11,7 +11,7 @@ Correr el servidor con la base de datos y luego se debe ir al directorio base de
 `mvn spring-boot:run`
 
 # Branch naming
-Se debe seguir el siguiente formato para la creación de un branch:
+Al crear un branch se debe crear desde la rama `develop`, dicho branch debe seguir el siguiente formato para su nombre:
 
 `[Código Historia de Usuario]_[Número de la tarea si existe]`
 
