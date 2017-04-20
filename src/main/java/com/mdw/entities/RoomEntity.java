@@ -135,4 +135,10 @@ public class RoomEntity {
         return true;
     }
 
+    @Override
+    public String toString() {
+        return "RoomEntity [id=" + id + ", image=" + image + ", type=" + type + ", extraServices=" + extraServices + ", hotel=" + hotel
+                + ", price=" + price + "]";
+    }
+
 }
