@@ -1,84 +1,45 @@
 package com.mdw.wrappers;
 
+import com.mdw.entities.ImageEntity;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.util.List;
+
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class RoomWrapper {
-    private long id;
 
-    private String image;
+    private Long id;
 
-    private String type;
+    private Long hotelId;
 
-    private String extraServices;
-
-    private int hotel;
+    private String roomType;
 
     private double price;
 
-    public RoomWrapper() {
-    }
+    private Long singleBedCount;
 
-    public RoomWrapper(long id, String image, String type, String extraServices, int hotel, double price) {
-        super();
-        this.id = id;
-        this.image = image;
-        this.type = type;
-        this.extraServices = extraServices;
-        this.hotel = hotel;
-        this.price = price;
-    }
+    private Long doubleBedCount;
 
-    public long getId() {
-        return id;
-    }
+    private Long queenBedCount;
 
-    public void setId(long id) {
-        this.id = id;
-    }
+    private Long kingBedCount;
 
-    public String getImage() {
-        return image;
-    }
+    private Long bathrooms;
 
-    public void setImage(String image) {
-        this.image = image;
-    }
+    private Boolean hasTv;
 
-    public String getType() {
-        return type;
-    }
+    private Boolean hasWifi;
 
-    public void setType(String type) {
-        this.type = type;
-    }
+    private Boolean hasHeating;
 
-    public String getExtraServices() {
-        return extraServices;
-    }
+    private Boolean hasAirConditioning;
 
-    public void setExtraServices(String extraServices) {
-        this.extraServices = extraServices;
-    }
+    private List<String> images;
 
-    public int getHotel() {
-        return hotel;
-    }
-
-    public void setHotel(int hotel) {
-        this.hotel = hotel;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
-    }
-
-    @Override
-    public String toString() {
-        return "RoomWrapper [id=" + id + ", image=" + image + ", type=" + type + ", extraServices=" + extraServices + ", hotel=" + hotel
-                + ", price=" + price + "]";
-    }
-    
-    
 }
