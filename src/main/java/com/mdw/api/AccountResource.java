@@ -10,7 +10,7 @@ import com.mdw.wrappers.AccountWrapper;
 
 @RestController
 @RequestMapping(Uris.VERSION)
-public class CuentaResource {
+public class AccountResource {
 
     private AccountController accountController;
     
