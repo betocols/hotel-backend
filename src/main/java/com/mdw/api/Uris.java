@@ -11,5 +11,7 @@ public class Uris {
     public static final String ID = "/{id}";
     
     public static final String CUENTA = "/cuenta";
+    
+    public static final String PAY_TYPE="/payType";
 
 }
