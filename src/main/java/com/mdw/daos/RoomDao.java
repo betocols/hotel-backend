@@ -7,5 +7,7 @@ import com.mdw.entities.RoomEntity;
 
 @Repository
 public interface RoomDao extends JpaRepository<RoomEntity, Long> {
-    public RoomEntity findById(long id);
+
+    RoomEntity findById(final long id);
+
 }
