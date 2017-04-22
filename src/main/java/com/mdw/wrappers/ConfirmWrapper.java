@@ -5,14 +5,18 @@ public class ConfirmWrapper {
 
     private String payType;
 
+    private String ConfirmationNumber;
+
     private String bank;
 
     public ConfirmWrapper() {
+
     }
 
-    public ConfirmWrapper(long id, String payType, String bank) {
+    public ConfirmWrapper(long id, String payType, String confirmationNumber, String bank) {
         this.id = id;
         this.payType = payType;
+        ConfirmationNumber = confirmationNumber;
         this.bank = bank;
     }
 
@@ -32,6 +36,14 @@ public class ConfirmWrapper {
         this.payType = payType;
     }
 
+    public String getConfirmationNumber() {
+        return ConfirmationNumber;
+    }
+
+    public void setConfirmationNumber(String confirmationNumber) {
+        ConfirmationNumber = confirmationNumber;
+    }
+
     public String getBank() {
         return bank;
     }
@@ -42,7 +54,7 @@ public class ConfirmWrapper {
 
     @Override
     public String toString() {
-        return "ConfirmWrapper [id=" + id + ", payType=" + payType + ", bank=" + bank + "]";
+        return "ConfirmWrapper [id=" + id + ", payType=" + payType + ", ConfirmationNumber=" + ConfirmationNumber + ", bank=" + bank + "]";
     }
 
 }

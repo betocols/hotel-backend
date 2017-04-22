@@ -14,4 +14,5 @@ public class Uris {
     
     public static final String PAY_TYPE="/payType";
 
+    public static final String CONFIRM="/confirmPay";
 }
