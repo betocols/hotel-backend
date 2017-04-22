@@ -118,15 +118,3 @@ CREATE TABLE `reservation` (
   KEY `FKm8xumi0g23038cw32oiva2ymw` (`room_id`),
   CONSTRAINT `FKm8xumi0g23038cw32oiva2ymw` FOREIGN KEY (`room_id`) REFERENCES `room` (`room_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Inserting default room types
---
-INSERT INTO `room_type` (`room_type_id`, `room_type`, `price`, `bathrooms`, `has_tv`, `has_wifi`, `has_heating`, `has_air_conditioning`)
-VALUES (1, 'SINGLE ROOM', 1500, 1, TRUE, TRUE , TRUE , TRUE);
-
-INSERT INTO `room_type` (`room_type_id`, `room_type`, `price`, `bathrooms`, `has_tv`, `has_wifi`, `has_heating`, `has_air_conditioning`)
-VALUES (2, 'DOUBLE ROOM', 2000, 1, TRUE, TRUE , TRUE , TRUE);
-
-INSERT INTO `room_type` (`room_type_id`, `room_type`, `price`, `bathrooms`, `has_tv`, `has_wifi`, `has_heating`, `has_air_conditioning`)
-VALUES (3, 'SUITE', 3500, 2, TRUE, TRUE , TRUE , TRUE);

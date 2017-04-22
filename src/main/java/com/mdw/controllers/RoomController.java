@@ -7,11 +7,13 @@ import com.mdw.daos.RoomDao;
 import com.mdw.entities.RoomEntity;
 import com.mdw.wrappers.RoomWrapper;
 
+import java.util.stream.Collectors;
+
 @Controller
 public class RoomController {
 
     private RoomDao roomDao;
-    
+
     @Autowired
     public void setRoomDao(RoomDao roomDao){
         this.roomDao=roomDao;
@@ -21,6 +23,7 @@ public class RoomController {
         RoomEntity room= roomDao.findById(id);
 
         return RoomWrapper.builder()
+                .id(room.getId())
                 .hotelId(room.getHotel().getId())
                 .roomType(room.getType().getType())
                 .price(room.getType().getPrice())
@@ -33,6 +36,7 @@ public class RoomController {
                 .hasWifi(room.getType().getHasWifi())
                 .hasHeating(room.getType().getHasHeating())
                 .hasAirConditioning(room.getType().getHasAirConditioning())
+                .images(room.getImages().stream().map(x -> x.getImage().getFilePath()).collect(Collectors.toList()))
                 .build();
     }
 }

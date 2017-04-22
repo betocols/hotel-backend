@@ -5,6 +5,20 @@ DELETE FROM  `hotel`;
 DELETE FROM  `hotel_chain`;
 DELETE FROM  `account`;
 DELETE FROM  `image`;
+DELETE FROM  `room_type`;
+
+
+--
+-- Inserting default room types
+--
+INSERT INTO `room_type` (`room_type_id`, `room_type`, `price`, `bathrooms`, `has_tv`, `has_wifi`, `has_heating`, `has_air_conditioning`)
+VALUES (1, 'SINGLE ROOM', 1500, 1, TRUE, TRUE , TRUE , TRUE);
+
+INSERT INTO `room_type` (`room_type_id`, `room_type`, `price`, `bathrooms`, `has_tv`, `has_wifi`, `has_heating`, `has_air_conditioning`)
+VALUES (2, 'DOUBLE ROOM', 2000, 1, TRUE, TRUE , TRUE , TRUE);
+
+INSERT INTO `room_type` (`room_type_id`, `room_type`, `price`, `bathrooms`, `has_tv`, `has_wifi`, `has_heating`, `has_air_conditioning`)
+VALUES (3, 'SUITE', 3500, 2, TRUE, TRUE , TRUE , TRUE);
 
 
 INSERT INTO `image` (`image_id`, `path`) VALUES (1, '/upmLogo.png');
