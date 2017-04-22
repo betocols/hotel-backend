@@ -1,3 +1,12 @@
+DELETE FROM  `room_image`;
+DELETE FROM  `room`;
+DELETE FROM  `hotel_image`;
+DELETE FROM  `hotel`;
+DELETE FROM  `hotel_chain`;
+DELETE FROM  `account`;
+DELETE FROM  `image`;
+
+
 INSERT INTO `image` (`image_id`, `path`) VALUES (1, '/upmLogo.png');
 INSERT INTO `image` (`image_id`, `path`) VALUES (2, '/upmLogo.png');
 INSERT INTO `image` (`image_id`, `path`) VALUES (3, '/upmLogo.png');
