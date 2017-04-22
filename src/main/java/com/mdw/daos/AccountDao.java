@@ -5,10 +5,10 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.mdw.entities.CuentaBancaria;
+import com.mdw.entities.AccountEntity;
 
 
 @Repository
-public interface CuentaDao extends JpaRepository<CuentaBancaria, Long>{
-    public List<CuentaBancaria> findAll();
+public interface AccountDao extends JpaRepository<AccountEntity, Long>{
+    public List<AccountEntity> findAll();
 }

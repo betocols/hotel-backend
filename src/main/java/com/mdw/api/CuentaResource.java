@@ -4,23 +4,23 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.mdw.controllers.CuentaController;
-import com.mdw.wrappers.CuentaWrapper;
+import com.mdw.controllers.AccountController;
+import com.mdw.wrappers.AccountWrapper;
 
 
 @RestController
 @RequestMapping(Uris.VERSION)
 public class CuentaResource {
 
-    private CuentaController cuentaController;
+    private AccountController accountController;
     
     @Autowired
-    public void setCuentaController(CuentaController cuentaController){
-        this.cuentaController=cuentaController;
+    public void setAccountController(AccountController accountController){
+        this.accountController=accountController;
     }
     
     @RequestMapping(value = Uris.CUENTA, method = RequestMethod.GET)
-    public CuentaWrapper getRoom() {
-        return cuentaController.getCuenta();
+    public AccountWrapper getAccount() {
+        return accountController.getAccount();
     }
 }
