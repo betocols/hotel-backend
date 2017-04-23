@@ -43,6 +43,7 @@ public class ReservationControllerTest {
     public void testCreateReservation() {
         ReservationWrapper reservation = ReservationWrapper.builder()
                 .numberOfPersons(2L)
+                .confirmationId(1L)
                 .roomId(1L)
                 .build();
         controller.createReservation(reservation);
@@ -59,6 +60,7 @@ public class ReservationControllerTest {
         thrown.expect(ValidationException.class);
         ReservationWrapper reservation = ReservationWrapper.builder()
                 .numberOfPersons(2L)
+                .confirmationId(1L)
                 .roomId(122L)
                 .build();
         controller.createReservation(reservation);

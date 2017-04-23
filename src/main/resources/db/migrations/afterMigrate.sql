@@ -7,23 +7,23 @@ DELETE FROM  `hotel_chain`;
 DELETE FROM  `account`;
 DELETE FROM  `image`;
 DELETE FROM  `room_type`;
-DELETE FROM  `pay_type`;
 DELETE FROM  `confirm`;
+DELETE FROM  `pay_type`;
 
 --
 -- Inserting default room types
 --
-INSERT INTO `room_type` (`room_type_id`, `room_type`, `price`, `bathrooms`, `has_tv`, `has_wifi`, `has_heating`, `has_air_conditioning`)
-VALUES (1, 'SINGLE ROOM', 1500, 1, TRUE, TRUE , TRUE , TRUE);
+INSERT INTO `room_type` (`room_type_id`, `room_type`, `price`,`max_persons` ,`bathrooms`, `has_tv`, `has_wifi`, `has_heating`, `has_air_conditioning`)
+VALUES (1, 'SINGLE ROOM', 1500, 2,1, TRUE, TRUE , TRUE , TRUE);
 
-INSERT INTO `room_type` (`room_type_id`, `room_type`, `price`, `bathrooms`, `has_tv`, `has_wifi`, `has_heating`, `has_air_conditioning`)
-VALUES (2, 'DOUBLE ROOM', 2000, 1, TRUE, TRUE , TRUE , TRUE);
+INSERT INTO `room_type` (`room_type_id`, `room_type`, `price`,`max_persons`, `bathrooms`, `has_tv`, `has_wifi`, `has_heating`, `has_air_conditioning`)
+VALUES (2, 'DOUBLE ROOM', 2000,2, 1, TRUE, TRUE , TRUE , TRUE);
 
-INSERT INTO `room_type` (`room_type_id`, `room_type`, `price`, `bathrooms`, `has_tv`, `has_wifi`, `has_heating`, `has_air_conditioning`)
-VALUES (3, 'TRIPLE ROOM', 3000, 1, TRUE, TRUE , TRUE , TRUE);
+INSERT INTO `room_type` (`room_type_id`, `room_type`, `price`,`max_persons` ,`bathrooms`, `has_tv`, `has_wifi`, `has_heating`, `has_air_conditioning`)
+VALUES (3, 'TRIPLE ROOM', 3000,3, 1, TRUE, TRUE , TRUE , TRUE);
 
-INSERT INTO `room_type` (`room_type_id`, `room_type`, `price`, `bathrooms`, `has_tv`, `has_wifi`, `has_heating`, `has_air_conditioning`)
-VALUES (4, 'SUITE', 3500, 2, TRUE, TRUE , TRUE , TRUE);
+INSERT INTO `room_type` (`room_type_id`, `room_type`, `price`,`max_persons` , `bathrooms`, `has_tv`, `has_wifi`, `has_heating`, `has_air_conditioning`)
+VALUES (4, 'SUITE', 3500,4, 2, TRUE, TRUE , TRUE , TRUE);
 
 
 INSERT INTO `image` (`image_id`, `path`) VALUES (1, '/upmLogo.jpg');
@@ -43,9 +43,6 @@ VALUES (1, 1, 1);
 INSERT INTO `room` (`room_id`, `hotel_id`, `room_type_id`, `room_number`, `single_beds`, `double_beds`, `queen_beds`, `king_beds`)
 VALUES (1, 1, 1, '404', 1, 0, 0, 0);
 
-INSERT INTO `reservation` (`id`, `person_count`, `reservation_code`, `room_id`)
-VALUES (1, 1, 'SMEKDN2MC', 1);
-
 INSERT INTO `room_image` (`room_image_id`, `room_id`, `image_id`)
 VALUES (1,1,2);
 
@@ -60,5 +57,11 @@ VALUES (2,'Credit Card');
 
 INSERT INTO `pay_type` (`pay_type_id`, `pay_type`)
 VALUES (3,'Debit Card');
+
+INSERT INTO `confirm` (`confirm_id`, `pay_type_id`, `confirmation_number`, `bank`)
+VALUES (1,1,'AGFF23J4', 'BBVA');
+
+INSERT INTO `reservation` (`id`, `person_count`, `reservation_code`, `room_id`, `confirmation_id`)
+VALUES (1, 1, 'SMEKDN2MC', 1, 1);
 
 

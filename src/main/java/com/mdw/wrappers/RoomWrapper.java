@@ -32,6 +32,8 @@ public class RoomWrapper {
 
     private Long bathrooms;
 
+    private Long maxPersons;
+
     private Boolean hasTv;
 
     private Boolean hasWifi;
