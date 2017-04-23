@@ -17,8 +17,8 @@ public class AccountController {
     }
 
     public AccountWrapper getAccount() {
-        AccountEntity cuenta = accountDao.findAll().get(0);
-        AccountWrapper cuentaWrapper = new AccountWrapper(cuenta.getAccountNumber(), cuenta.getAccountName(), cuenta.getConcept());
+        AccountEntity account = accountDao.findAll().get(0);
+        AccountWrapper cuentaWrapper = new AccountWrapper(account.getAccountNumber(), account.getAccountName(), account.getConcept());
         return cuentaWrapper;
     }
 }
