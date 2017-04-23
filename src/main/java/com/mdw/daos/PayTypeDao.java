@@ -8,6 +8,9 @@ import com.mdw.entities.PayTypeEntity;
 
 
 public interface PayTypeDao extends JpaRepository<PayTypeEntity, String>{
-    public List<PayTypeEntity> findAll();
+
+    List<PayTypeEntity> findAll();
+
+    PayTypeEntity findByPayType(final String payType);
 }
 

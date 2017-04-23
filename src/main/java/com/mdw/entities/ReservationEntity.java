@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.time.Instant;
 
 @Data
 @Builder
@@ -27,4 +28,7 @@ public class ReservationEntity {
 
     @Column(name = "person_count", nullable = false)
     private Long numberOfPersons;
+
+    @Column(name = "reservation_date", nullable = false)
+    private Instant reservationDate;
 }

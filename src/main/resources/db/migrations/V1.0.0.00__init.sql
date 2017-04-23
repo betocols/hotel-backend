@@ -113,6 +113,7 @@ CREATE TABLE `reservation` (
   `person_count` bigint(20) NOT NULL,
   `reservation_code` varchar(255) NOT NULL,
   `room_id` bigint(20) NOT NULL,
+  `reservation_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `UK_b16r178jxqqmyfum9swkjtri9` (`reservation_code`),
   KEY `FKm8xumi0g23038cw32oiva2ymw` (`room_id`),

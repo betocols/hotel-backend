@@ -9,17 +9,17 @@ import com.mdw.wrappers.AccountWrapper;
 
 
 @RestController
-@RequestMapping(Uris.VERSION)
+@RequestMapping(Uris.VERSION + Uris.ACCOUNT)
 public class AccountResource {
 
     private AccountController accountController;
-    
+
     @Autowired
     public void setAccountController(AccountController accountController){
         this.accountController=accountController;
     }
-    
-    @RequestMapping(value = Uris.CUENTA, method = RequestMethod.GET)
+
+    @RequestMapping(value = Uris.ACCOUNT, method = RequestMethod.GET)
     public AccountWrapper getAccount() {
         return accountController.getAccount();
     }

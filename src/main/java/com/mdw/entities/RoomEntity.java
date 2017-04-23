@@ -10,8 +10,8 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString(exclude = "hotel")
-@EqualsAndHashCode(exclude = "hotel")
+@ToString(exclude = {"hotel", "type"})
+@EqualsAndHashCode(exclude = {"hotel", "type"})
 @Entity
 @Table(name = "room", uniqueConstraints = @UniqueConstraint(columnNames = {"hotel_id", "room_number"}))
 public class RoomEntity {

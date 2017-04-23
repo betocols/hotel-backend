@@ -10,7 +10,7 @@ import com.mdw.controllers.RoomController;
 import com.mdw.wrappers.RoomWrapper;
 
 @RestController
-@RequestMapping(Uris.VERSION + Uris.ROOM)
+@RequestMapping(Uris.VERSION +  Uris.ROOM)
 public class RoomResource {
     private RoomController roomController;
 
