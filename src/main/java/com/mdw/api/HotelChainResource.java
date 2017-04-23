@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/cadena")
+@RequestMapping(Uris.VERSION + Uris.CHAIN)
 public class HotelChainResource {
 
     @Autowired

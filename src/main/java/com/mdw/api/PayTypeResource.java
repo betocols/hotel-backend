@@ -11,7 +11,7 @@ import com.mdw.controllers.PayTypeController;
 import com.mdw.wrappers.PayTypeWrapper;
 
 @RestController
-@RequestMapping(Uris.VERSION)
+@RequestMapping(Uris.VERSION + Uris.PAY_TYPE)
 public class PayTypeResource {
 
     private PayTypeController paTypeController;
@@ -20,10 +20,10 @@ public class PayTypeResource {
     public void setPaTypeController(PayTypeController paTypeController) {
         this.paTypeController = paTypeController;
     }
-    
+
     @RequestMapping(value = Uris.PAY_TYPE, method = RequestMethod.GET)
     public List<PayTypeWrapper> getPayType() {
         return paTypeController.getPayTypes();
     }
-    
+
 }
