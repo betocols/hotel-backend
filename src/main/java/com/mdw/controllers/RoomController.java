@@ -37,7 +37,8 @@ public class RoomController {
                 .hasWifi(room.getType().getHasWifi())
                 .hasHeating(room.getType().getHasHeating())
                 .hasAirConditioning(room.getType().getHasAirConditioning())
-                .images(room.getImages().stream().map(x -> x.getImage().getFilePath()).collect(Collectors.toList()))
+                .images(room.getImages())
+               // .images(room.getImages().stream().map(x -> x.getImage().getFilePath()).collect(Collectors.toList()))
                 .build();
     }
 }
