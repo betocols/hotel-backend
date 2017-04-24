@@ -32,6 +32,7 @@ public class RoomController {
                 .queenBedCount(room.getQueenBedCount())
                 .kingBedCount(room.getKingBedCount())
                 .bathrooms(room.getType().getBathrooms())
+                .maxPersons(room.getType().getMaxPersons())
                 .hasTv(room.getType().getHasTv())
                 .hasWifi(room.getType().getHasWifi())
                 .hasHeating(room.getType().getHasHeating())

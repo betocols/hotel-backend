@@ -65,6 +65,7 @@ CREATE TABLE `hotel_image` (
 CREATE TABLE `room_type` (
   `room_type_id` bigint(20) NOT NULL AUTO_INCREMENT,
   `bathrooms` bigint(20) NOT NULL,
+  `max_persons` bigint(20) NOT NULL DEFAULT 0,
   `has_air_conditioning` bit(1) NOT NULL,
   `has_heating` bit(1) NOT NULL,
   `has_tv` bit(1) NOT NULL,
@@ -117,5 +118,5 @@ CREATE TABLE `reservation` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `UK_b16r178jxqqmyfum9swkjtri9` (`reservation_code`),
   KEY `FKm8xumi0g23038cw32oiva2ymw` (`room_id`),
-  CONSTRAINT `FKm8xumi0g23038cw32oiva2ymw` FOREIGN KEY (`room_id`) REFERENCES `room` (`room_id`)
+  CONSTRAINT `FK_room_reference` FOREIGN KEY (`room_id`) REFERENCES `room` (`room_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

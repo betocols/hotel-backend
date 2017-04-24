@@ -26,7 +26,7 @@ public class ConfirmController {
         this.payTypeDao = payTypeDao;
     }
 
-    public void createConfirmation(ConfirmWrapper confirmWrapper){
+    public ConfirmWrapper createConfirmation(ConfirmWrapper confirmWrapper){
         PayTypeEntity payTypeEntity = payTypeDao.findByPayType(confirmWrapper.getPayType());
 
         ConfirmEntity entity = ConfirmEntity.builder()
@@ -35,6 +35,8 @@ public class ConfirmController {
                 .payType(payTypeEntity)
                 .build();
         confirmDao.save(entity);
+
+        return new ConfirmWrapper(entity.getId(), entity.getPayType().getPayType(), entity.getConfirmationNumber(), entity.getBank());
     }
 
 }

@@ -31,4 +31,9 @@ public class ReservationEntity {
 
     @Column(name = "reservation_date", nullable = false)
     private Instant reservationDate;
+
+    @OneToOne
+    @JoinColumn(name = "confirmation_id", nullable = false)
+    private ConfirmEntity confirmation;
 }
+

@@ -33,6 +33,9 @@ public class RoomTypeEntity {
     @Column(name = "bathrooms", nullable = false)
     private Long bathrooms;
 
+    @Column(name = "max_persons", nullable = false)
+    private Long maxPersons;
+
     @Column(name = "has_tv", nullable = false)
     private Boolean hasTv;
 
