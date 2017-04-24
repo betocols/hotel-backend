@@ -14,6 +14,8 @@ public class Uris {
 
     public static final String CHAIN = "/hotelChain";
 
+    public static final String HOTEL = "/hotel";
+
     public static final String RESERVATION = "/reservation";
 
     public static final String PAY_TYPE="/payType";

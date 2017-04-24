@@ -1,8 +1,24 @@
 package com.mdw.entities;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
-import javax.persistence.*;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -12,6 +28,7 @@ import java.util.List;
 @ToString(exclude = "hotelChain")
 @EqualsAndHashCode(exclude = "hotelChain")
 @Entity
+//@Proxy(lazy = false)
 @Table(name = "hotel")
 public class HotelEntity {
 
@@ -37,13 +54,13 @@ public class HotelEntity {
 
     @ManyToOne
     @JoinColumn(name = "hotel_chain_id")
-    private HotelChainEntity hotelChain;
+    private HotelChainEntity hotelChain = new HotelChainEntity();
 
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "hotel_id", nullable = false)
-    private List<HotelImageEntity> images;
+    private List<HotelImageEntity> images = new ArrayList();
 
-    @OneToMany(mappedBy = "hotel")
-    private List<RoomEntity> rooms;
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "hotel")
+    private List<RoomEntity> rooms = new ArrayList();
 
 }

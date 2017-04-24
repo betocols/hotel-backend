@@ -23,6 +23,9 @@ public class ReservationWrapper {
     private Long roomId;
 
     @NotNull
+    private Long confirmationId;
+
+    @NotNull
     private Long numberOfPersons;
 
     private Instant reservationDate;
