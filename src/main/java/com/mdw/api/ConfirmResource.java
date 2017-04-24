@@ -20,7 +20,7 @@ public class ConfirmResource {
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public void confirmPay(@RequestBody ConfirmWrapper confirmWrapper){
-        confirmController.createConfirmation(confirmWrapper);
+    public ConfirmWrapper confirmPay(@RequestBody ConfirmWrapper confirmWrapper){
+        return confirmController.createConfirmation(confirmWrapper);
     }
 }
