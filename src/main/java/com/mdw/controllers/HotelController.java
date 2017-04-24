@@ -24,7 +24,9 @@ public class HotelController {
         List<HotelEntity> hotelEntityList = hotelDao.findAll();
         List<HotelCompleteWrapper> hotelCompleteWrappers =
                 hotelEntityList.stream()
-                        .map(hotelEntity -> HotelConverter.entityToWrapper(hotelEntity)).collect(Collectors.toList());
+                        .map(hotelEntity -> HotelConverter.entityToWrapper(hotelEntity))
+                        .filter(hotelCompleteWrapper -> hotelCompleteWrapper.getRooms().size() != 0)
+                        .collect(Collectors.toList());
 
         return hotelCompleteWrappers;
     }
@@ -33,7 +35,9 @@ public class HotelController {
         List<HotelEntity> hotelEntityList = hotelDao.findByCityAndZipCode(city, zipCode);
         List<HotelCompleteWrapper> hotelCompleteWrappers =
                 hotelEntityList.stream()
-                        .map(hotelEntity -> HotelConverter.entityToWrapper(hotelEntity)).collect(Collectors.toList());
+                        .map(hotelEntity -> HotelConverter.entityToWrapper(hotelEntity))
+                        .filter(hotelCompleteWrapper -> hotelCompleteWrapper.getRooms().size() != 0)
+                        .collect(Collectors.toList());
 
         return hotelCompleteWrappers;
     }
@@ -42,7 +46,9 @@ public class HotelController {
         List<HotelEntity> hotelEntityList = hotelDao.findByCity(city);
         List<HotelCompleteWrapper> hotelCompleteWrappers =
                 hotelEntityList.stream()
-                        .map(hotelEntity -> HotelConverter.entityToWrapper(hotelEntity)).collect(Collectors.toList());
+                        .map(hotelEntity -> HotelConverter.entityToWrapper(hotelEntity))
+                        .filter(hotelCompleteWrapper -> hotelCompleteWrapper.getRooms().size() != 0)
+                        .collect(Collectors.toList());
 
         return hotelCompleteWrappers;
     }
@@ -51,7 +57,9 @@ public class HotelController {
         List<HotelEntity> hotelEntityList = hotelDao.findByZipCode(zipCode);
         List<HotelCompleteWrapper> hotelCompleteWrappers =
                 hotelEntityList.stream()
-                        .map(hotelEntity -> HotelConverter.entityToWrapper(hotelEntity)).collect(Collectors.toList());
+                        .map(hotelEntity -> HotelConverter.entityToWrapper(hotelEntity))
+                        .filter(hotelCompleteWrapper -> hotelCompleteWrapper.getRooms().size() != 0)
+                        .collect(Collectors.toList());
 
         return hotelCompleteWrappers;
     }
