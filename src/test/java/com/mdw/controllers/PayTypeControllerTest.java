@@ -1,4 +1,4 @@
-package com.mdw.daos;
+package com.mdw.controllers;
 
 import static org.junit.Assert.assertEquals;
 
@@ -15,28 +15,20 @@ import org.springframework.test.context.TestExecutionListeners;
 import org.springframework.test.context.TestExecutionListeners.MergeMode;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.mdw.entities.PayTypeEntity;
-
-
+import com.mdw.wrappers.PayTypeWrapper;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 @TestExecutionListeners(listeners = FlywayTestExecutionListener.class, mergeMode = MergeMode.MERGE_WITH_DEFAULTS)
 @FlywayTest
-public class PayTypeDaoTest {
+public class PayTypeControllerTest {
 
     @Autowired
-    private PayTypeDao payTypeDao;
+    private PayTypeController payTypeController;
     
     @Test
-    public void testFindAll(){
-        List<PayTypeEntity> payTypes=payTypeDao.findAll(); 
+    public void testGetPayTypes(){
+        List<PayTypeWrapper> payTypes=payTypeController.getPayTypes();
         assertEquals(3,payTypes.size());
-    }
-    
-    @Test
-    public void testFindByPayType(){
-        PayTypeEntity payTypeEntity=payTypeDao.findByPayType("Transfer");
-        assertEquals("Transfer",payTypeEntity.getPayType());
     }
 }
