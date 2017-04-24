@@ -24,6 +24,8 @@ public class RoomWrapper {
     private String roomType;
 
     private double price;
+    
+    private Long maxPersons;
 
     private Long singleBedCount;
 
