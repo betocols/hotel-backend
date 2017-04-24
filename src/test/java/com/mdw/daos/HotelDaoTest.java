@@ -23,7 +23,7 @@ import static org.junit.Assert.assertTrue;
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 @TestExecutionListeners(listeners = FlywayTestExecutionListener.class, mergeMode = MergeMode.MERGE_WITH_DEFAULTS)
 @FlywayTest
-public class HotelDaoIt {
+public class HotelDaoTest {
     private static String CITY_MAD = "Madrid";
     private static String ZIP_CODE_MAD = "25008";
 
