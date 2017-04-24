@@ -32,11 +32,13 @@ public class RoomController {
                 .queenBedCount(room.getQueenBedCount())
                 .kingBedCount(room.getKingBedCount())
                 .bathrooms(room.getType().getBathrooms())
+                .maxPersons(room.getType().getMaxPersons())
                 .hasTv(room.getType().getHasTv())
                 .hasWifi(room.getType().getHasWifi())
                 .hasHeating(room.getType().getHasHeating())
                 .hasAirConditioning(room.getType().getHasAirConditioning())
-                .images(room.getImages().stream().map(x -> x.getImage().getFilePath()).collect(Collectors.toList()))
+                .images(room.getImages())
+               // .images(room.getImages().stream().map(x -> x.getImage().getFilePath()).collect(Collectors.toList()))
                 .build();
     }
 }

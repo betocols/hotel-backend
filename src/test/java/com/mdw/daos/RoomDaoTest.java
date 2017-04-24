@@ -18,7 +18,7 @@ import static org.junit.Assert.assertEquals;
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 @TestExecutionListeners(listeners = FlywayTestExecutionListener.class, mergeMode = MergeMode.MERGE_WITH_DEFAULTS)
 @FlywayTest
-public class RoomDaoIt {
+public class RoomDaoTest {
     @Autowired
     private RoomDao roomDao;
 
