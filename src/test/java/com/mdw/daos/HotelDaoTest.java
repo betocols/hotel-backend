@@ -25,7 +25,7 @@ import static org.junit.Assert.assertTrue;
 @FlywayTest
 public class HotelDaoTest {
     private static String CITY_MAD = "Madrid";
-    private static String ZIP_CODE_MAD = "25008";
+    private static String ZIP_CODE_MAD = "28008";
 
     @Autowired
     private HotelDao hotelDao;

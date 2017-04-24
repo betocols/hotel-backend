@@ -46,16 +46,16 @@ INSERT INTO `hotel_chain` (`hotel_chain_id`,`hotel_chain_name`, `logo_id`) VALUE
 -- Inserting Hotels
 --
 INSERT INTO `hotel` (`hotel_id`,`hotel_name`,`address_line`, `city`, `province`, `zip_code`, `hotel_chain_id`)
-VALUES (1, 'UPM Sur', 'Sol, 43', 'Madrid', 'Madrid', '25008', 1);
+VALUES (1, 'UPM Sur', 'Sol, 43', 'Madrid', 'Madrid', '28008', 1);
 
 INSERT INTO `hotel` (`hotel_id`,`hotel_name`,`address_line`, `city`, `province`, `zip_code`, `hotel_chain_id`)
-VALUES (2, 'UPM Sur 2', 'Sol, 432', 'Madrid', 'Madrid', '25008', 1);
+VALUES (2, 'UPM Sur 2', 'Sol, 432', 'Madrid', 'Madrid', '28008', 1);
 
 INSERT INTO `hotel` (`hotel_id`,`hotel_name`,`address_line`, `city`, `province`, `zip_code`, `hotel_chain_id`)
-VALUES (3, 'UPM Sur 3', 'Sol, 433', 'Madrid', 'Madrid', '25009', 1);
+VALUES (3, 'UPM Sur 3', 'Sol, 433', 'Madrid', 'Madrid', '28009', 1);
 
 INSERT INTO `hotel` (`hotel_id`,`hotel_name`,`address_line`, `city`, `province`, `zip_code`, `hotel_chain_id`)
-VALUES (4, 'UPM Sur 4', 'Sol, 434', 'Madrid', 'Madrid', '25010', 1);
+VALUES (4, 'UPM Sur 4', 'Sol, 434', 'Madrid', 'Madrid', '28010', 1);
 
 INSERT INTO `hotel` (`hotel_id`,`hotel_name`,`address_line`, `city`, `province`, `zip_code`, `hotel_chain_id`)
 VALUES (5, 'UPF Sur 5', 'La Diagonal, 435', 'Barcelona', 'Barcelona', '08001', 1);

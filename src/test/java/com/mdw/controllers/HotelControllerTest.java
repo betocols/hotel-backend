@@ -28,7 +28,7 @@ import static org.junit.Assert.assertTrue;
 @FlywayTest
 public class HotelControllerTest {
     private static String CITY_MAD = "Madrid";
-    private static String ZIP_CODE_MAD = "25008";
+    private static String ZIP_CODE_MAD = "28008";
     @Rule
     public ExpectedException thrown = ExpectedException.none();
 
