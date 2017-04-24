@@ -10,6 +10,9 @@ DELETE FROM  `room_type`;
 DELETE FROM  `confirm`;
 DELETE FROM  `pay_type`;
 
+
+
+
 --
 -- Inserting default room types
 --
