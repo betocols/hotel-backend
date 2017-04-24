@@ -44,7 +44,9 @@ public class HotelControllerTest {
 
         List<HotelCompleteWrapper> expectedHotelCompleteWrappers =
                 dao.findAll().stream()
-                        .map(hotelEntity -> HotelConverter.entityToWrapper(hotelEntity)).collect(Collectors.toList());
+                        .map(hotelEntity -> HotelConverter.entityToWrapper(hotelEntity))
+                        .filter(hotelCompleteWrapper -> hotelCompleteWrapper.getRooms().size() != 0)
+                        .collect(Collectors.toList());
 
         compareHotelsCompleteList(hotelCompleteWrappers, expectedHotelCompleteWrappers);
     }
@@ -55,7 +57,9 @@ public class HotelControllerTest {
 
         List<HotelCompleteWrapper> expectedHotelCompleteWrappers =
                 dao.findByCityAndZipCode(CITY_MAD, ZIP_CODE_MAD).stream()
-                        .map(hotelEntity -> HotelConverter.entityToWrapper(hotelEntity)).collect(Collectors.toList());
+                        .map(hotelEntity -> HotelConverter.entityToWrapper(hotelEntity))
+                        .filter(hotelCompleteWrapper -> hotelCompleteWrapper.getRooms().size() != 0)
+                        .collect(Collectors.toList());
 
         compareHotelsCompleteList(hotelCompleteWrappers, expectedHotelCompleteWrappers);
     }
@@ -66,7 +70,9 @@ public class HotelControllerTest {
 
         List<HotelCompleteWrapper> expectedHotelCompleteWrappers =
                 dao.findByCity(CITY_MAD).stream()
-                        .map(hotelEntity -> HotelConverter.entityToWrapper(hotelEntity)).collect(Collectors.toList());
+                        .map(hotelEntity -> HotelConverter.entityToWrapper(hotelEntity))
+                        .filter(hotelCompleteWrapper -> hotelCompleteWrapper.getRooms().size() != 0)
+                        .collect(Collectors.toList());
 
         compareHotelsCompleteList(hotelCompleteWrappers, expectedHotelCompleteWrappers);
     }
@@ -77,7 +83,9 @@ public class HotelControllerTest {
 
         List<HotelCompleteWrapper> expectedHotelCompleteWrappers =
                 dao.findByZipCode(ZIP_CODE_MAD).stream()
-                        .map(hotelEntity -> HotelConverter.entityToWrapper(hotelEntity)).collect(Collectors.toList());
+                        .map(hotelEntity -> HotelConverter.entityToWrapper(hotelEntity))
+                        .filter(hotelCompleteWrapper -> hotelCompleteWrapper.getRooms().size() != 0)
+                        .collect(Collectors.toList());
 
         compareHotelsCompleteList(hotelCompleteWrappers, expectedHotelCompleteWrappers);
     }
